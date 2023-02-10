@@ -1,0 +1,63 @@
+.app__navbar {
+  flex-direction: column;
+}
+.app__navbar-container {
+  padding: 1rem;
+  background: var(--color-black);
+  font-family: var(--font-alt);
+  color: var(--color-crimson);
+  justify-content: space-between;
+}
+.app__navbar-links {
+  gap: 1rem;
+  cursor: pointer;
+}
+.app__navbar-sign__container {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.app__navbar-sign__container div:nth-child(2) {
+  border-left: 1px solid white;
+  width: 0px;
+  height: 27px;
+}
+.app__navbar-logo img {
+  width: 199px;
+  height: 57px;
+}
+.app__navbar-menu {
+  display: none;
+}
+.app__navbar__menu-container {
+  width: 6rem;
+  height: 6rem;
+  background: var(--color-crimson);
+}
+@media screen and (max-width: 950px) {
+  .app__navbar-links {
+    display: none;
+  }
+  .app__navbar-menu {
+    display: flex;
+    flex-direction: column;
+  }
+  ion-icon {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+@media screen and (max-width: 580px) {
+  .app__navbar-links {
+    display: none;
+  }
+  .app__navbar-sign__container {
+    display: none;
+  }
+  ion-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+}

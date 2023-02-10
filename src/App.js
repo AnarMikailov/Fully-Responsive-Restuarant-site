@@ -1,11 +1,5 @@
 import "./App.css";
-import {
-  FooterOverlay,
-  Menuitem,
-  NewsLetter,
-  Navbar,
-  SubHeading,
-} from "./components";
+import { Navbar } from "./components";
 import {
   AboutUs,
   Chef,
