@@ -1,54 +1,86 @@
-import React, { useState } from "react";
-import "./navbar.css";
-import logo from "../../assets/gericht.png";
-const Links = () => {
-  return (
-    <div className="app__navbar-links flex__center ">
-      <div className="app__navbar__links-link" id="home">
-        Home
-      </div>
-      <div className="app__navbar__links-link" id="Pages">
-        Pages
-      </div>
-      <div className="app__navbar__links-link" id="Contact us">
-        Contact us
-      </div>
-      <div className="app__navbar__links-link" id="Blog">
-        Blog
-      </div>
-      <div className="app__navbar__links-link" id="Landing">
-        Landing
-      </div>
-    </div>
-  );
-};
+import React from "react";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { MdOutlineRestaurantMenu } from "react-icons/md";
+import images from "../../constants/images";
+import "./Navbar.css";
+
 const Navbar = () => {
-  const [menuIcon, setMenuIcon] = useState(false);
+  const [toggleMenu, setToggleMenu] = React.useState(false);
   return (
-    <div className="app__navbar">
-      <div className="app__navbar-container flex__center">
-        <div className="app__navbar-logo">
-          <img src={logo} alt="logo" />
-        </div>
-        <Links />
-        <div className="app__navbar-sign__container">
-          <div className="app__navbar-sign">Log in / Registration</div>
-          <div></div>
-          <div className="app__navbar-booktable">Book Table</div>
-        </div>
-        <div
-          onClick={() => {
-            setMenuIcon(!menuIcon);
-          }}
-          className={`app__navbar-menu  ${menuIcon && "slide-bottom"}`}
-        >
-          <ion-icon name={`${menuIcon ? "close" : "menu"}-outline`}></ion-icon>
-        </div>
+    <nav className="app__navbar">
+      <div className="app__navbar-logo">
+        <img src={images.gericht} alt="app__logo" />
       </div>
-      <div>
-        {menuIcon && <div className="app__navbar__menu-container"></div>}
+      <ul className="app__navbar-links">
+        <li className="p__opensans">
+          <a href="#home">Home</a>
+        </li>
+        <li className="p__opensans">
+          <a href="#about">About</a>
+        </li>
+        <li className="p__opensans">
+          <a href="#menu">Menu</a>
+        </li>
+        <li className="p__opensans">
+          <a href="#awards">Awards</a>
+        </li>
+        <li className="p__opensans">
+          <a href="#contact">Contact</a>
+        </li>
+      </ul>
+      <div className="app__navbar-login">
+        <a href="#login" className="p__opensans">
+          Log In / Registration
+        </a>
+        <div />
+        <a href="/" className="p__opensans">
+          Book Table
+        </a>
       </div>
-    </div>
+      <div className="app__navbar-smallscreen">
+        <GiHamburgerMenu
+          color="#fff"
+          fontSize={27}
+          onClick={() => setToggleMenu(true)}
+        />
+        {toggleMenu && (
+          <div className="app__navbar-smallscreen_overlay flex__center slide-bottom">
+            <MdOutlineRestaurantMenu
+              fontSize={27}
+              className="overlay__close"
+              onClick={() => setToggleMenu(false)}
+            />
+            <ul className="app__navbar-smallscreen_links">
+              <li>
+                <a href="#home" onClick={() => setToggleMenu(false)}>
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="#about" onClick={() => setToggleMenu(false)}>
+                  About
+                </a>
+              </li>
+              <li>
+                <a href="#menu" onClick={() => setToggleMenu(false)}>
+                  Menu
+                </a>
+              </li>
+              <li>
+                <a href="#awards" onClick={() => setToggleMenu(false)}>
+                  Awards
+                </a>
+              </li>
+              <li>
+                <a href="#contact" onClick={() => setToggleMenu(false)}>
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+        )}
+      </div>
+    </nav>
   );
 };
 
