@@ -22,3 +22,10 @@
   border: 1px solid var(--color-golden);
   cursor: pointer;
 }
+.app__video-play,
+.app__video-pause {
+  margin: 2.1rem;
+}
+.hidden {
+  display: none;
+}

@@ -26,7 +26,21 @@ const Intro = () => {
         src={meal}
       ></video>
       <div className="app__video-overlay flex__center">
-        <div className="app__video-overlay_circle" onClick={handleVideo}></div>
+        <div className="app__video-overlay_circle" onClick={handleVideo}>
+          {playVideo ? (
+            <BsPauseFill
+              className="app__video-pause"
+              color="#fff"
+              fontSize={30}
+            />
+          ) : (
+            <BsFillPlayFill
+              className="app__video-play"
+              color="#fff"
+              fontSize={30}
+            />
+          )}
+        </div>
       </div>
     </div>
   );
