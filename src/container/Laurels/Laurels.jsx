@@ -1,16 +1,16 @@
 import React from "react";
 import "./Laurels.css";
-import { images, data } from "../../constants";
+import { images as images, data } from "../../constants";
 import { SubHeading, MenuItem } from "../../components";
 
-const AwardCard = (props) => (
+const AwardCard = (prop) => (
   <div className="app__laurels_awards-card">
-    <img src={props.award.imgUrl} alt="award1" />
+    <img src={prop.award.imgUrl} alt="award1" />
     <div className="app__laurels_awards-card_content">
       <p className="p__cormorant" style={{ color: "#dcca87" }}>
-        {props.award.title}
+        {prop.award.title}
       </p>
-      <p className="p__cormorant">{props.award.subtitle}</p>
+      <p className="p__cormorant">{prop.award.subtitle}</p>
     </div>
   </div>
 );
